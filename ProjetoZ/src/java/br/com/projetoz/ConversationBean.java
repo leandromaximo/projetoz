@@ -1,12 +1,18 @@
 package br.com.projetoz;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 @Named
 @ConversationScoped
@@ -26,12 +32,35 @@ public class ConversationBean implements Serializable {
 		counter = 0;
 	}
 	
+	public void teste(){
+		/* Create EntityManagerFactory */
+		EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("projetoZPU");
+
+		/* Create and populate Entity */
+		
+
+		/* Create EntityManager */
+		EntityManager em = emf.createEntityManager();
+
+		/* Persist entity */
+		
+		em.getTransaction().begin();
+		Query q = em.createQuery("from UF");
+		q.getResultList();
+		
+		em.close();
+	}
+	
+	
+	
 	public void initConversation(){
 		if (!FacesContext.getCurrentInstance().isPostback() 
 			&& conversation.isTransient()) {
 			
 			conversation.begin();
 		}
+		teste();
 	}
 	
 	public void increment(){
