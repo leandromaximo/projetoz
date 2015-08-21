@@ -4,8 +4,8 @@ import java.util.Collection;
 
 import javax.persistence.Query;
 
-import br.com.projetoz.dao.generic.AbstDAO;
 import br.com.projetoz.entity.Pessoa;
+import br.com.projetoz.generic.dao.AbstDAO;
 
 public class PessoaDAO extends AbstDAO{
 
