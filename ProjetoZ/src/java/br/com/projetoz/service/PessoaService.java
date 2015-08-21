@@ -20,9 +20,14 @@ public class PessoaService extends Service{
 	}
 	
 	
-	public Collection<Pessoa> outraRegraDeNegocioBuscar(Pessoa p) {
+	public Collection<Pessoa> regraDeNegocioBuscar(Pessoa p) {
 		//regraDeNegocioAqui
 		return pessoaDAO.findAll(Pessoa.class);
+	}
+	
+	public Collection<Pessoa> outraRegraDeNegocioEspecificaBuscar(Pessoa p) {
+		//regraDeNegocioAqui
+		return pessoaDAO.aquiUmaQuerieEspecifica("",null);
 	}
 	
 }

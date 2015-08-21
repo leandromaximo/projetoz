@@ -36,7 +36,7 @@ public class ConversationBean implements Serializable {
 	}
 	
 	public void teste(){
-		for (Pessoa p : pessoaService.outraRegraDeNegocioBuscar(null)) {
+		for (Pessoa p : pessoaService.regraDeNegocioBuscar(null)) {
 			System.out.println(p.getNome());
 		}
 		
