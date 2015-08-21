@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.projetoz.entity.generic.ItfEntidade;
+import br.com.projetoz.generic.entity.ItfEntidade;
 
 @Entity
 @Table(name="pessoa")
