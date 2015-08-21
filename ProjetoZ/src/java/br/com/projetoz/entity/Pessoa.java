@@ -1,4 +1,4 @@
-package br.com.projetoz;
+package br.com.projetoz.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

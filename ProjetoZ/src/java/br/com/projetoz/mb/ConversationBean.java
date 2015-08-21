@@ -1,4 +1,4 @@
-package br.com.projetoz;
+package br.com.projetoz.mb;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,6 +13,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+
+import br.com.projetoz.entity.Pessoa;
 
 @Named
 @ConversationScoped
