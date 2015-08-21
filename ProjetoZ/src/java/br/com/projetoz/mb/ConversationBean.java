@@ -1,7 +1,6 @@
 package br.com.projetoz.mb;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.Conversation;
@@ -10,11 +9,11 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 
+import br.com.projetoz.dao.PessoaDAO;
+import br.com.projetoz.dao.generic.DAO;
 import br.com.projetoz.entity.Pessoa;
+import br.com.projetoz.service.PessoaService;
 
 @Named
 @ConversationScoped
@@ -25,36 +24,22 @@ public class ConversationBean implements Serializable {
 	@Inject
     private Conversation conversation;
 	
+	@Inject 
+	PessoaService pessoaService;
+	
+	
 	private int counter;
 	
-	// Will only be called once
-	// during bean initialization
 	@PostConstruct
 	public void init(){
 		counter = 0;
 	}
 	
 	public void teste(){
-		/* Create EntityManagerFactory */
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("projetoZPU");
-
-		/* Create and populate Entity */
-		
-
-		/* Create EntityManager */
-		EntityManager em = emf.createEntityManager();
-
-		/* Persist entity */
-		
-		em.getTransaction().begin();
-		Query q = em.createQuery("from Pessoa");
-		List<Pessoa> list = q.getResultList();
-		for (Pessoa pessoa : list) {
-			System.out.println(pessoa.getNome());
+		for (Pessoa p : pessoaService.outraRegraDeNegocioBuscar(null)) {
+			System.out.println(p.getNome());
 		}
 		
-		em.close();
 	}
 	
 	
@@ -65,7 +50,6 @@ public class ConversationBean implements Serializable {
 			
 			conversation.begin();
 		}
-		teste();
 	}
 	
 	public void increment(){

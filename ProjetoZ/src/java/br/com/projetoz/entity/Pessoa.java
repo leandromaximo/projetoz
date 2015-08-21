@@ -1,5 +1,7 @@
 package br.com.projetoz.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="pessoa")
-public class Pessoa{
+public class Pessoa implements Serializable{
 
 	@Id
 	@Column(name = "ID_PESSOA")
