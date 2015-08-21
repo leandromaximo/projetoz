@@ -9,7 +9,7 @@ import org.hibernate.criterion.Order;
 
 
 @SuppressWarnings(value = { "unchecked","rawtypes" })
-public abstract class AbstDAO{
+public abstract class AbstDAO implements ItfCrudDAO{
 	
 	@Inject
 	protected EntityManager entityManager;
