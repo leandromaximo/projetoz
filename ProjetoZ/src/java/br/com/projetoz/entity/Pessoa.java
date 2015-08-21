@@ -19,7 +19,7 @@ public class Pessoa{
 	private String nome;
 	
 	@Column(name="NR_CPF", nullable=true, length=11)
-	private Integer cpf;
+	private String cpf;
 	
 	public Pessoa() {
 		
@@ -41,11 +41,11 @@ public class Pessoa{
 		this.nome = nome;
 	}
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
