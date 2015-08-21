@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import org.hibernate.criterion.Order;
 
-public interface InterfaceCrudDAO<T> {
+public interface ItfCrudDAO<T> {
 
 	public void incluir(Object entidade);
 	

@@ -9,7 +9,7 @@ import org.hibernate.criterion.Order;
 
 
 @SuppressWarnings(value = { "unchecked","rawtypes" })
-public class DAO{
+public abstract class AbstDAO{
 	
 	@Inject
 	protected EntityManager entityManager;
