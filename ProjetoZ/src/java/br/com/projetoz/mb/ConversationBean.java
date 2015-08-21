@@ -11,8 +11,8 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import br.com.projetoz.dao.PessoaDAO;
-import br.com.projetoz.dao.generic.AbstDAO;
 import br.com.projetoz.entity.Pessoa;
+import br.com.projetoz.generic.dao.AbstDAO;
 import br.com.projetoz.service.PessoaService;
 
 @Named
