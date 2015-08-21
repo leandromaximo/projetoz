@@ -18,7 +18,7 @@ public class Pessoa{
 	@Column(name="DS_NOME", nullable=true, length=60)
 	private String nome;
 	
-	@Column(name="NR_CPF", nullable=true, length=11)
+	@Column(name="NR_CPF", nullable=true, length=14)
 	private String cpf;
 	
 	public Pessoa() {
