@@ -46,8 +46,11 @@ public class ConversationBean implements Serializable {
 		/* Persist entity */
 		
 		em.getTransaction().begin();
-		Query q = em.createQuery("from UF");
-		q.getResultList();
+		Query q = em.createQuery("from Pessoa");
+		List<Pessoa> list = q.getResultList();
+		for (Pessoa pessoa : list) {
+			System.out.println(pessoa.getNome());
+		}
 		
 		em.close();
 	}
