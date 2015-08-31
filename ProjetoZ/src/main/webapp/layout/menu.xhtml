@@ -5,11 +5,19 @@
 	xmlns:p="http://primefaces.org/ui">
 
 		<h:form>
-			<p:menu style="width: 200px">
-				<p:submenu label="Menu">
-					<p:menuitem value="Login" icon="ui-icon-key" />
-					<p:menuitem value="Fazer meu cadastro" icon="ui-icon-contact" />
-				</p:submenu>
-			</p:menu>
+			<p:panelMenu style="width:200px">
+				<p:submenu label="Menu" expanded="true" >
+					<p:menuitem value="Pagina Inicial" icon="ui-icon-home"/>
+			        <p:submenu label="Pessoa">
+			            <p:menuitem value="Pesquisar Pessoa" icon="ui-icon-search" />
+			            <p:menuitem value="Cadastrar Pessoa" icon="ui-icon-disk" />
+			        </p:submenu>
+			    </p:submenu>
+			    <p:submenu label="Segurança">
+			        <p:menuitem value="Cadastrar Usuario" icon="ui-icon-disk" />
+			        <p:menuitem value="Alterar Senha" icon="ui-icon-wrench" />
+			        <p:menuitem value="Sair" icon="ui-icon-extlink" />
+			    </p:submenu>
+		    </p:panelMenu>
 		</h:form>
 </html>
