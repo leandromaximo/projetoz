@@ -7,15 +7,16 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Meu Sistema</title>
-        <style type="text/css">
-            body {background-color: #eeeeee; font-size: 12px}
-        </style> 
+       
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css"
+			rel="stylesheet" type="text/css" />
     </h:head>
     <h:body>
+    	<ui:include src="ajaxload.xhtml" />
         <div align="center">
             <p:layout style="min-width:1020px;max-width:1020px;min-height:600px">  
                 <p:layoutUnit position="north" size="100">  
-                    <h:graphicImage library="images" name="imgLoad.gif" />
+                    <h:graphicImage height="80" library="images" name="forbidden.jpg" />
                 </p:layoutUnit>  
  
                 <p:layoutUnit position="west" size="220">  

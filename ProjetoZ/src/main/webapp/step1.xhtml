@@ -19,10 +19,7 @@
 	<h:form>
 		<h:outputText value="#{conversationBean.counter}"></h:outputText>
 		<br />
-		<h:commandButton value="Increment" type="submit">
-			<f:ajax execute="@form" listener="#{conversationBean.increment}"
-				render="@form" />
-		</h:commandButton>
+		<p:commandButton action="#{conversationBean.increment}" update="@form" value="Increment" />
 		<br />
 		<br />
 		<h:commandLink action="#{conversationBean.handleFirstStepSubmit}"
