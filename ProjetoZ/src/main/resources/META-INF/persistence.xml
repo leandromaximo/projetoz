@@ -6,9 +6,10 @@
 
 	<persistence-unit name="projetoZPU" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        
        
         <class>br.com.projetoz.entity.Pessoa</class>
+        <class>br.com.projetoz.entity.PessoaFisica</class>
+        <class>br.com.projetoz.entity.PessoaJuridica</class>
         
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projetoz"/>
@@ -18,6 +19,8 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
             <property name="hibernate.cache.use_query_cache" value="false" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
+        
     </persistence-unit>
 </persistence>
