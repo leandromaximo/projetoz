@@ -2,10 +2,17 @@ package br.com.projetoz.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import br.com.projetoz.entity.generic.ItfEntidade;
 
@@ -17,15 +24,15 @@ public class Pessoa implements ItfEntidade{
 
 	@Id
 	@Column(name = "ID_PESSOA")
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToMany
-	@Column(name = "ID_PESSOA_FISICA")
+	@JoinColumn(name = "ID_PESSOA_FISICA", nullable=true)
+	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaFisica pessoaFisica;
 	
-	@OneToMany
-	@Column(name = "ID_PESSOA_JURIDICA")
+	@JoinColumn(name = "ID_PESSOA_JURIDICA", nullable=true)
+	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaJuridica pessoaJuridica;
 
 	public Pessoa(){

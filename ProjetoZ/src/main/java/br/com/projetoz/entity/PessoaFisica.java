@@ -3,8 +3,8 @@ package br.com.projetoz.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import br.com.projetoz.entity.generic.ItfEntidade;
@@ -17,7 +17,7 @@ public class PessoaFisica implements ItfEntidade{
 
 	@Id
 	@Column(name = "ID_PESSOA_FISICA")
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name="DS_NOME", nullable=true, length=60)
@@ -25,11 +25,6 @@ public class PessoaFisica implements ItfEntidade{
 	
 	@Column(name="NR_CPF", nullable=true, length=14)
 	private String cpf;
-	
-	@OneToMany
-	@Column(name = "ID_PESSOA")
-	private Pessoa pessoa;
-
 	
 	public PessoaFisica(){
 		
@@ -59,14 +54,6 @@ public class PessoaFisica implements ItfEntidade{
 	
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 
 }

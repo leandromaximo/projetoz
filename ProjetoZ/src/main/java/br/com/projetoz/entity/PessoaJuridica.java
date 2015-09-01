@@ -3,6 +3,7 @@ package br.com.projetoz.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,7 +18,7 @@ public class PessoaJuridica implements ItfEntidade{
 
 	@Id
 	@Column(name = "ID_PESSOA_JURIDICA")
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name="DS_RAZAO_SOCIAL", nullable=true, length=60)
@@ -25,11 +26,6 @@ public class PessoaJuridica implements ItfEntidade{
 	
 	@Column(name="NR_CNPJ", nullable=true, length=14)
 	private String cnpj;
-	
-	@OneToMany
-	@Column(name = "ID_PESSOA")
-	private Pessoa pessoa;
-
 	
 	public PessoaJuridica(){
 		
@@ -61,12 +57,5 @@ public class PessoaJuridica implements ItfEntidade{
 		this.cnpj = cnpj;
 	}
 
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-	}
 
 }
