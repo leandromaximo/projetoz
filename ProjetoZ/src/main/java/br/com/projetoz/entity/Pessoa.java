@@ -7,12 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import br.com.projetoz.entity.generic.ItfEntidade;
 
@@ -34,6 +30,10 @@ public class Pessoa implements ItfEntidade{
 	@JoinColumn(name = "ID_PESSOA_JURIDICA", nullable=true)
 	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaJuridica pessoaJuridica;
+	
+	@JoinColumn(name = "ID_MUNICIPIO", nullable=true)
+	@OneToOne(fetch=FetchType.LAZY)
+	private Municipio municipio;
 
 	public Pessoa(){
 		
@@ -63,6 +63,14 @@ public class Pessoa implements ItfEntidade{
 
 	public void setPessoaJuridica(PessoaJuridica pessoaJuridica) {
 		this.pessoaJuridica = pessoaJuridica;
+	}
+
+	public Municipio getMunicipio() {
+		return municipio;
+	}
+
+	public void setMunicipio(Municipio municipio) {
+		this.municipio = municipio;
 	}
 	
 }
