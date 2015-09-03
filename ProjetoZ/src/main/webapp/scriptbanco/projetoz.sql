@@ -41,6 +41,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `pessoa` WRITE;
 /*!40000 ALTER TABLE `pessoa` DISABLE KEYS */;
+INSERT INTO `pessoa` VALUES (1,1,NULL,805),(2,2,NULL,805),(3,NULL,1,805);
 /*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,6 +51,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `pessoa_fisica` WRITE;
 /*!40000 ALTER TABLE `pessoa_fisica` DISABLE KEYS */;
+INSERT INTO `pessoa_fisica` VALUES (1,'12345678910','Leandro Máximo Cunha'),(2,'12345678910','Teste Teste Teste');
 /*!40000 ALTER TABLE `pessoa_fisica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,6 +61,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `pessoa_juridica` WRITE;
 /*!40000 ALTER TABLE `pessoa_juridica` DISABLE KEYS */;
+INSERT INTO `pessoa_juridica` VALUES (1,'12345678910123','Empresa Teste');
 /*!40000 ALTER TABLE `pessoa_juridica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-01 17:13:53
+-- Dump completed on 2015-09-03 10:39:06
