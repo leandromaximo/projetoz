@@ -18,4 +18,25 @@
 	
 .fadeLoading img {top:50%; left:50%; position:absolute; z-index:999999; }
 
-body {background-color: #eeeeee; font-size: 12px}
+body {background-color: #eeeeee;}
+
+/*------------------------- Prime --------------------------- */
+.ui-widget 		{font-size: 12px !important; }
+.ui-widget-content {font-size: 12px !important; }
+.ui-state-default {font-size: 12px !important; }
+.ui-growl  		{left:400px; }
+.ui-state-hover {box-shadow:none!important; }
+
+/*------------------------- Titulos ---------------------------------*/
+.agrupadorTitulo			{margin:10px 0 0 0; float:left; width: 100%;}
+.agrupadorTitulo h1			{color:#535353; font-size:13px; margin:0 0 6px 0 }
+.agrupadorTitulo.full  h1	{width: 100%; float:left;}
+
+.agrupadorTitulo .full {background:#f8f8f8; border-top:1px solid #d8d8d8; height:6px; width: 100%; margin:0 0 20px 0; float:left;}
+
+/*-------------------------- Elementos ---------------------------------*/
+label  {float: left; }
+.divisor {width: 100%; float: left; border-bottom: dashed 1px #d8d8d8; margin:12px 0; }
+.space {width: 1px; margin-top: 4px; }
+.rows  {width: 100%; float: left; margin: 0 0 14px 0;}
+

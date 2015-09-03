@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.internal.NotNull;
+
 import br.com.projetoz.entity.generic.ItfEntidade;
 
 @Entity
@@ -20,9 +22,11 @@ public class PessoaFisica implements ItfEntidade{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotNull
 	@Column(name="DS_NOME", nullable=true, length=60)
 	private String nome;
 	
+	@NotNull
 	@Column(name="NR_CPF", nullable=true, length=14)
 	private String cpf;
 	

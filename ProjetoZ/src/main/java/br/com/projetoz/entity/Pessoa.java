@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.sun.istack.internal.NotNull;
+
 import br.com.projetoz.entity.generic.ItfEntidade;
 
 @Entity
@@ -31,6 +33,7 @@ public class Pessoa implements ItfEntidade{
 	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaJuridica pessoaJuridica;
 	
+	@NotNull
 	@JoinColumn(name = "ID_MUNICIPIO", nullable=true)
 	@OneToOne(fetch=FetchType.LAZY)
 	private Municipio municipio;

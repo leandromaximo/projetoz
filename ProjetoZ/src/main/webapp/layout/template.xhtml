@@ -6,7 +6,7 @@
  
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Meu Sistema</title>
+        <title>Projeto Z</title>
        
         <link href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css"
 			rel="stylesheet" type="text/css" />
@@ -20,7 +20,9 @@
         <div align="center">
             <p:layout style="width:100%;min-height:800px">  
                 <p:layoutUnit position="north" size="100">  
-                    <h:graphicImage height="79" library="images" name="topo.png" />
+	                <div align="left">
+	                    <h:graphicImage height="79" library="images" name="topo.png" />
+	                </div>
                 </p:layoutUnit>  
  
                 <p:layoutUnit position="west" size="220">  
@@ -28,9 +30,11 @@
                 </p:layoutUnit>  
                 
                 <p:layoutUnit position="center">  
-                    <ui:insert name="centro">
-                    
-                    </ui:insert>
+                	<div align="left">
+	                    <ui:insert name="centro">
+	                    
+	                    </ui:insert>
+                    </div>
                 </p:layoutUnit>
                 
                 <p:layoutUnit position="south">  
