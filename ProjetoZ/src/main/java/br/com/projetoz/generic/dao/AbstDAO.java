@@ -21,7 +21,9 @@ public abstract class AbstDAO implements ItfCrudDAO{
 	}
 
 	public void incluir(Object entidade){
+		entityManager.getTransaction().begin();
 		entityManager.persist(entidade); 
+		entityManager.getTransaction().commit();
 	}
 
 	public void alterar(Object entidade){

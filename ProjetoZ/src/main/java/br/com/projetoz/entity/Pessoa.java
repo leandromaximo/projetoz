@@ -10,9 +10,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.projetoz.entity.generic.ItfEntidade;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import com.sun.istack.internal.NotNull;
+
+import br.com.projetoz.entity.generic.ItfEntidade;
 
 @Entity
 @Table(name="PESSOA")
@@ -26,10 +29,12 @@ public class Pessoa implements ItfEntidade{
 	private Long id;
 	
 	@JoinColumn(name = "ID_PESSOA_FISICA", nullable=true)
+	@Cascade(CascadeType.ALL)
 	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaFisica pessoaFisica;
 	
 	@JoinColumn(name = "ID_PESSOA_JURIDICA", nullable=true)
+	@Cascade(CascadeType.ALL)
 	@OneToOne(fetch=FetchType.LAZY)
 	private PessoaJuridica pessoaJuridica;
 	
