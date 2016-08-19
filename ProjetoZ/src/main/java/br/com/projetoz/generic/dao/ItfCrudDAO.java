@@ -1,9 +1,6 @@
 package br.com.projetoz.generic.dao;
 
 import java.io.Serializable;
-import java.util.Collection;
-
-import org.hibernate.criterion.Order;
 
 public interface ItfCrudDAO extends Serializable{
 

@@ -8,8 +8,10 @@ import javax.persistence.EntityManager;
 import org.hibernate.criterion.Order;
 
 
-@SuppressWarnings(value = { "unchecked","rawtypes" })
+@SuppressWarnings(value = { "unchecked" })
 public abstract class AbstDAO implements ItfCrudDAO{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Inject
 	protected EntityManager entityManager;

@@ -9,6 +9,9 @@ import br.com.projetoz.generic.dao.AbstDAO;
 
 public class PessoaDAO extends AbstDAO	{
 
+	private static final long serialVersionUID = 1L;
+
+	@SuppressWarnings("unchecked")
 	public Collection<Pessoa> aquiUmaQuerieEspecifica(String propriedade,Object valor){
 	StringBuilder sql = new StringBuilder("from Pessoa");
 	

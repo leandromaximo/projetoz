@@ -152,13 +152,13 @@ public class DataUtil {
 	    int ds = data.get(Calendar.DAY_OF_WEEK);
 	 
 	    return(d + " de " + getMesNome(m, false) + " de " +
-	      a + " (" + getDiaSemanaNome(ds, 0) + ")  às "+ hora);
+	      a + " (" + getDiaSemanaNome(ds, 0) + ")  ï¿½s "+ hora);
 	}
 	
 	/** DIA DA SEMANA - NOME **/
 	private static String getDiaSemanaNome(int i, int tipo) {
-	    String diasem[] = {"Domingo", "Segunda-feira", "Terça-feira",
-	      "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
+	    String diasem[] = {"Domingo", "Segunda-feira", "Terï¿½a-feira",
+	      "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sï¿½bado"};
 	    if (tipo == 0)
 	       return(diasem[i-1]); // extenso
 	    else return(diasem[i-1].substring(0, 3));
@@ -166,7 +166,7 @@ public class DataUtil {
 	  
 	/** MES - NOME **/
 	public static String getMesNome(int i, boolean abreviado) {
-		    String mes[] = {"Janeiro", "Fevereiro", "Março", "Abril",
+		    String mes[] = {"Janeiro", "Fevereiro", "Marï¿½o", "Abril",
 		      "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro",
 		      "Novembro", "Dezembro"};
 		    if (abreviado)
@@ -188,7 +188,7 @@ public class DataUtil {
 	/**
 	 * Converte String em Date
 	 * @param data - String a ser formatada.
-	 * @param formato - Formato em um padrão válido ex.: "dd/MM/yyyy"
+	 * @param formato - Formato em um padrï¿½o vï¿½lido ex.: "dd/MM/yyyy"
 	 * @return Date
 	 * @throws ParseException
 	 */
@@ -401,7 +401,7 @@ public class DataUtil {
 			   return 0;
 		   }
 
-	       // Calcula a diferença entre hoje e da data de inicio
+	       // Calcula a diferenï¿½a entre hoje e da data de inicio
 	       long diferenca = dataFinal.getTime() -
 	                        dataInicio.getTime() ;
 
@@ -466,7 +466,7 @@ public class DataUtil {
 	}
 	
 	/**
-	   * Calcula o número de dias entre duas datas.
+	   * Calcula o nï¿½mero de dias entre duas datas.
 	   */
 	public static Boolean comparaDatas(Date start, Date end) {
 

@@ -13,7 +13,6 @@ import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
 import br.com.projetoz.util.StringUtil;
-import br.com.projetoz.util.SystemUtil;
 
 @FacesConverter(value = "cnpjConverter")
 public class CnpjConverter implements Converter {

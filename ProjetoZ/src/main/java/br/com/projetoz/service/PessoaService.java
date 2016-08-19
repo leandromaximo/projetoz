@@ -10,6 +10,8 @@ import br.com.projetoz.generic.service.AbstService;
 
 public class PessoaService extends AbstService{
 
+	private static final long serialVersionUID = 1L;
+	
 	@Inject
 	PessoaDAO pessoaDAO;
 	

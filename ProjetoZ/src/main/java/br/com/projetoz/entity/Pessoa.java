@@ -10,9 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.sun.istack.internal.NotNull;
-
 import br.com.projetoz.entity.generic.ItfEntidade;
+
+import com.sun.istack.internal.NotNull;
 
 @Entity
 @Table(name="PESSOA")
@@ -42,12 +42,10 @@ public class Pessoa implements ItfEntidade{
 		
 	}
 	
-	@Override
 	public Long getId() {
 		return id;
 	}
 	
-	@Override
 	public void setId(Long id) {
 		this.id = id;
 	}
