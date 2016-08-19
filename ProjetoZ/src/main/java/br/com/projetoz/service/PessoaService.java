@@ -17,13 +17,22 @@ public class PessoaService extends AbstService{
 	
 	public void regraDeNegocioAqui(Pessoa p) {
 		//regraDeNegocioAqui
-		pessoaDAO.incluir(p);
+		try {
+			pessoaDAO.incluir(p);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
 	public Collection<Pessoa> regraDeNegocioBuscar(Pessoa p) {
 		//regraDeNegocioAqui
-		return pessoaDAO.findAll(Pessoa.class);
+		try {
+			return pessoaDAO.findAll(Pessoa.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public Collection<Pessoa> outraRegraDeNegocioEspecificaBuscar(Pessoa p) {

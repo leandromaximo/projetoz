@@ -16,11 +16,23 @@ public class EntityManagerCreator {
 	@Produces
 	@RequestScoped
 	public EntityManager createEntityManager() {
-		return factory.createEntityManager();
+		EntityManager em = null;
+		try {
+			em = factory.createEntityManager();
+			em.getTransaction().begin();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return em;
 	}
 	
 	public void closeEntityManager(@Disposes EntityManager entityManager) {
-		entityManager.close();
+		try {
+			entityManager.getTransaction().commit();			
+			entityManager.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

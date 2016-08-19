@@ -20,30 +20,28 @@ public abstract class AbstDAO implements ItfCrudDAO{
 		return entityManager;
 	}
 
-	public void incluir(Object entidade){
-		entityManager.getTransaction().begin();
+	public void incluir(Object entidade) throws Exception{
 		entityManager.persist(entidade); 
-		entityManager.getTransaction().commit();
 	}
 
-	public void alterar(Object entidade){
+	public void alterar(Object entidade) throws Exception{
 		entityManager.merge(entidade); 
 	}
 
-	public <E> E saveOrUpdate(E entidade){
+	public <E> E saveOrUpdate(E entidade) throws Exception{
 		return entityManager.merge(entidade);
 	}
 	
-	public void excluir(Object entidade){
+	public void excluir(Object entidade) throws Exception{
 		entidade = entityManager.merge(entidade);
 		entityManager.remove(entidade);
 	}
 	
-	public <E> Collection<E> findAll(Class<E> entityClass){
+	public <E> Collection<E> findAll(Class<E> entityClass) throws Exception{
 		return entityManager.createQuery("from "+entityClass.getSimpleName()).getResultList();
 	}
 	
-	public <E> Collection<E> findAll(Class<E> entityClass,Order orderBy){
+	public <E> Collection<E> findAll(Class<E> entityClass,Order orderBy) throws Exception{
 		return entityManager.createQuery("from "+entityClass.getSimpleName() + " order by "+orderBy.toString()).getResultList();
 	}
 	

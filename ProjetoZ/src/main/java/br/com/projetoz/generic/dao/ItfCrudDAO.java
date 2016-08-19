@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public interface ItfCrudDAO extends Serializable{
 
-	public void incluir(Object entidade);
+	public void incluir(Object entidade) throws Exception;
 	
-	public void alterar(Object entidade);
+	public void alterar(Object entidade) throws Exception;
 //	
 //	
 //	public <E> E find(Class<E> entityClass, Object pk);
