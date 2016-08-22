@@ -6,12 +6,14 @@ import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.util.Locale;
 
+import javax.enterprise.inject.spi.CDI;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
+import br.com.projetoz.dao.PessoaDAO;
 import br.com.projetoz.util.StringUtil;
 
 @FacesConverter(value = "cpfConverter")
@@ -42,6 +44,8 @@ public class CpfConverter implements Converter {
 
        public String getAsString(FacesContext fc, UIComponent component,
                        Object value) {
+    	   PessoaDAO pessoaDAO = CDI.current().select(PessoaDAO.class).get();
+    	   System.out.println(pessoaDAO);
                return StringUtil.maskCpf(value.toString());
        }
 }
